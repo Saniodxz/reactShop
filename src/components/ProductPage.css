@@ -1,0 +1,36 @@
+/* ProductPage.css */
+.product-page {
+    padding: 1rem;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; /* Set the maximum height of the image */
+  }
+  
+  .product-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .product-card button {
+    background-color: #f0c14b;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #111;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,33 @@
+/* HomePage.css */
+.home-page {
+    padding: 1rem;
+  }
+  
+  .banner img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-card p {
+    margin: 0.5rem 0;
+  }
+  
