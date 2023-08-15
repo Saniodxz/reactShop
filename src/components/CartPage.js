@@ -1,27 +1,27 @@
 import React from 'react';
-import './CartPage.css'; // Import the stylesheet for CartPage
+import './CartPage.css';
 
-const CartPage = () => {
+const CartPage = ({ cartItems }) => {
+  const calculateTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price, 0);
+  };
+
   return (
     <div className="cart-page">
       <h2>Your Shopping Cart</h2>
       <div className="cart-items">
-        {/* Sample cart items */}
-        <div className="cart-item">
-          <img src="product1.jpg" alt="Product 1" />
-          <div>
-            <p>Product Name</p>
-            <p>$99.99</p>
+        {cartItems.map((item) => (
+          <div className="cart-item" key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <div>
+              <p>{item.title}</p>
+              <p>${item.price}</p>
+            </div>
           </div>
-        </div>
-        <div className="cart-item">
-          <img src="product2.jpg" alt="Product 2" />
-          <div>
-            <p>Product Name</p>
-            <p>$149.99</p>
-          </div>
-        </div>
-        {/* Add more cart items */}
+        ))}
+      </div>
+      <div className="cart-total">
+        <p>Total: ${calculateTotal().toFixed(2)}</p>
       </div>
     </div>
   );

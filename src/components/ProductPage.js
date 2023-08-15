@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ProductPage.css'; // Import the stylesheet for ProductPage
+import './ProductPage.css';
 
-const ProductPage = () => {
+const ProductPage = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch products from API and update state
     const fetchProducts = async () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products');
@@ -28,7 +27,7 @@ const ProductPage = () => {
             <img src={product.image} alt={product.title} />
             <p>{product.title}</p>
             <p>${product.price}</p>
-            <button>Add to Cart</button>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         ))}
       </div>
